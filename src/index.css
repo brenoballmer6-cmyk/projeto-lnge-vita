@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-accent: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-slate-200 antialiased overflow-x-hidden;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f9f295 25%, #d4af37 50%, #f9f295 75%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-bg {
+  background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fcf6ba, #aa771c);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shadow-gold {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.product-reflection {
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 0.8; transform: scale(1.2) rotate(180deg); }
+  100% { opacity: 0; transform: scale(0) rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-15px); }
+}
+
+.floating-sparkle {
+  position: absolute;
+  background: radial-gradient(circle, #f9f295 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 4s infinite, float 10s infinite ease-in-out;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.vsl-shadow {
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.15), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-highlight {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.timer-bg {
+  background: linear-gradient(90deg, #1a1a1a 0%, #000000 100%);
+}
